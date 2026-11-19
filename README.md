@@ -11,6 +11,7 @@
 | 클린 코드 · A11y 설계안 | [plans/03-clean-code-and-interaction-plan.md](./plans/03-clean-code-and-interaction-plan.md) | BEM 네이밍, 5대 JS 모듈 분리, 시맨틱 `<button type="button">` 및 `aria-pressed` 규격 |
 | 구현 · 검수 로드맵 | [plans/04-implementation-and-deploy-roadmap.md](./plans/04-implementation-and-deploy-roadmap.md) | 구현 단계, 6대 프리플라이트 검수 게이트 및 배포 로드맵 |
 | 배포 실행 지침서 | [plans/05-github-deploy-guidelines.md](./plans/05-github-deploy-guidelines.md) | `.gitignore`, `references/.gitkeep`, Netlify/Vercel 설정 및 Git 안전 Push 지침 |
+| 호스팅 배포 지침서 | [plans/06-netlify-and-vercel-deploy-guidelines.md](./plans/06-netlify-and-vercel-deploy-guidelines.md) | Netlify & Vercel CLI 정적 호스팅 배포 절차, 설정 이원화 및 실서버 검증 지침 |
 | 코드 레퍼런스 | [references/neomorphism-buttons.html](./references/neomorphism-buttons.html), [references/neomorphism-button.css](./references/neomorphism-button.css) | 뉴모피즘 음각/양각 및 스위치 질감 분석 원형 스니펫 (대용량 `.mp4` 원본은 `.gitignore` 제외) |
 | 정적 목업 결과물 | [output/clean-mockup-v2/index.html](./output/clean-mockup-v2/index.html) | 인터랙티브 워크스페이스, 3D 6단 레이어 스택, 18종 연동 타일, 커맨드 팔레트(`/`) 정적 웹 |
 

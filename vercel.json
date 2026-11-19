@@ -1,6 +1,6 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "buildCommand": "",
+  "buildCommand": "echo Track C2 static bundle ready",
   "outputDirectory": "output/clean-mockup-v2",
   "cleanUrls": true,
   "trailingSlash": false,
