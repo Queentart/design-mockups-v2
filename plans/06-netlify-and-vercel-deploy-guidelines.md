@@ -76,8 +76,8 @@
 
 ---
 
-## 6. 라이브 배포 URL 기록 (검증 완료 후 갱신)
+## 6. 라이브 배포 URL 기록
 
-- **GitHub 저장소**: `https://github.com/Queentart/design-mockups-v2`
-- **Netlify Production URL**: *(Step 3 완료 후 기록)*
-- **Vercel Production URL**: *(Step 4 완료 후 기록)*
+- **GitHub 저장소**: https://github.com/Queentart/design-mockups-v2
+- **Netlify Production URL**: https://queentart-design-mockups-v2.netlify.app (`Admin`: https://app.netlify.com/projects/queentart-design-mockups-v2)
+- **Vercel Production URL**: https://track-c2-publishing-deploy2.vercel.app (`Inspector`: https://vercel.com/queentarts-projects/track-c2-publishing-deploy2, GitHub `Queentart/design-mockups-v2` 자동 배포 연결 완료)

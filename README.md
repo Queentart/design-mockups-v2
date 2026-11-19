@@ -30,5 +30,11 @@
 이 저장소는 루트 아래의 `output/clean-mockup-v2` 디렉터리를 정적 배포 타깃으로 사용합니다.
 
 - **Netlify** ([netlify.toml](./netlify.toml)): `[build] publish = "output/clean-mockup-v2"` 및 기본 보안/캐시 헤더 포함
-- **Vercel** ([vercel.json](./vercel.json)): `"buildCommand": ""`, `"outputDirectory": "output/clean-mockup-v2"`, `"cleanUrls": true` 및 기본 보안 헤더 포함
+- **Vercel** ([vercel.json](./vercel.json)): `"buildCommand": "echo Track C2 static bundle ready"`, `"outputDirectory": "output/clean-mockup-v2"`, `"cleanUrls": true` 및 기본 보안 헤더 포함
 - **Git 무시 규칙** ([.gitignore](./.gitignore)): `.env*`, 인증 키, OS 메타데이터, 플랫폼 캐시, 대용량 바이너리 미디어(`references/*.mp4`) 차단 및 `.gitkeep` 보존
+
+## 라이브 배포 URL
+
+- **GitHub Repository**: https://github.com/Queentart/design-mockups-v2
+- **Netlify Live URL**: https://queentart-design-mockups-v2.netlify.app
+- **Vercel Live URL**: https://track-c2-publishing-deploy2.vercel.app

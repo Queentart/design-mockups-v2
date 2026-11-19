@@ -24,3 +24,5 @@ references/*.pdf
 
 # Always track directory placeholders
 !.gitkeep
+
+.vercel
