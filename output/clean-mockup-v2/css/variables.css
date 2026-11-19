@@ -1,0 +1,130 @@
+/* ==========================================================================
+   2. Design Token SSOT — Team Agent Workspace Mockup (css/variables.css)
+   ========================================================================== */
+
+:root {
+  /* ========================================================================
+     [30초 빠른 컬러 커스터마이징 구역]
+     배포 후 아래 3~4개 핵심 토큰만 수정해도 전체 랜딩 톤이 즉시 전환됩니다.
+     ======================================================================== */
+  /* 80% Warm Editorial Paper Canvas */
+  --color-bg-canvas: #F4F3EC;
+  --color-bg-elevated: #FAF9F5;
+  --color-bg-glass: rgba(244, 243, 236, 0.92);
+
+  /* 15% Crisp Panels & Hairline Borders */
+  --color-bg-panel: #FFFFFF;
+  --color-bg-subtle: #EAE8DF;
+  --color-bg-hover: #EFECE4;
+  --color-bg-code: #F0EFE8;
+  --color-border-subtle: rgba(25, 25, 24, 0.09);
+  --color-border-strong: rgba(25, 25, 24, 0.18);
+
+  /* 5% Point Accent (Coral Terracotta for Governance & Key Signals) */
+  --color-accent-coral: #D95D43;
+  --color-accent-coral-soft: rgba(217, 93, 67, 0.09);
+  --color-accent-coral-border: rgba(217, 93, 67, 0.36);
+  --color-status-online: #2E8B57;
+  --color-status-amber: #C98A2C;
+  --color-status-slate: #64748B;
+
+  /* Editorial Charcoal Typography & Dark Pill CTA */
+  --color-text-primary: #191918;
+  --color-text-secondary: #575653;
+  --color-text-muted: #8C8A84;
+  --color-text-dormant: #B7B4AA;
+  --color-cta-bg: #191918;
+  --color-cta-bg-hover: #2E2E2B;
+  --color-cta-fg: #FAF9F5;
+  --color-scrim: rgba(25, 25, 24, 0.32);
+
+  /* Typography Stacks & Fluid Editorial Scale */
+  --font-sans: "Pretendard Variable", "Pretendard", "Inter", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", sans-serif;
+  --font-mono: "JetBrains Mono", "Fira Code", Consolas, monospace;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-md: 1.0625rem;
+  --text-prose: clamp(1.05rem, 1.25vw, 1.25rem);
+  --text-hero: clamp(1.35rem, 1.9vw, 1.85rem);
+
+  /* Spacing Scale */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+
+  /* Border Radius */
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 18px;
+  --radius-pill: 9999px;
+
+  /* Multi-Layered Soft Paper Shadows */
+  --shadow-window:
+    0 24px 48px -14px rgba(25, 25, 24, 0.14),
+    0 6px 16px -4px rgba(25, 25, 24, 0.08);
+  --shadow-layer:
+    0 18px 34px -12px rgba(25, 25, 24, 0.12),
+    0 4px 10px -2px rgba(25, 25, 24, 0.06);
+  --shadow-tile:
+    0 10px 22px -8px rgba(25, 25, 24, 0.12),
+    0 2px 6px -1px rgba(25, 25, 24, 0.05);
+  --shadow-modal:
+    0 32px 64px -18px rgba(25, 25, 24, 0.24),
+    0 8px 20px -6px rgba(25, 25, 24, 0.1);
+
+  /* Tactile Neumorphism (Warm Paper Soft-Relief) Tokens */
+  --shadow-neu-extruded:
+    5px 5px 11px -2px rgba(25, 25, 24, 0.14),
+    -5px -5px 11px -2px rgba(255, 255, 255, 0.9),
+    -0.5px -0.5px 0 rgba(255, 255, 255, 0.95),
+    0.5px 0.5px 0 rgba(25, 25, 24, 0.08);
+  --shadow-neu-extruded-hover:
+    7px 7px 14px -2px rgba(25, 25, 24, 0.17),
+    -6px -6px 13px -2px rgba(255, 255, 255, 0.96),
+    -0.5px -0.5px 0 rgba(255, 255, 255, 1),
+    0.5px 0.5px 0 rgba(25, 25, 24, 0.1);
+  --shadow-neu-pressed:
+    inset 3px 3px 6px -1px rgba(25, 25, 24, 0.18),
+    inset -3px -3px 6px -1px rgba(255, 255, 255, 0.88),
+    -0.5px -0.5px 0 rgba(255, 255, 255, 0.92),
+    0.5px 0.5px 0 rgba(25, 25, 24, 0.12);
+  --shadow-neu-groove:
+    inset 2px 2px 5px rgba(25, 25, 24, 0.12),
+    inset -2px -2px 5px rgba(255, 255, 255, 0.84);
+  --shadow-neu-knob:
+    2px 2px 5px rgba(25, 25, 24, 0.18),
+    -1px -1px 3px rgba(255, 255, 255, 0.9);
+  --shadow-neu-cta:
+    6px 6px 14px -2px rgba(25, 25, 24, 0.26),
+    -4px -4px 10px -1px rgba(255, 255, 255, 0.88),
+    inset 1px 1px 1px rgba(255, 255, 255, 0.16);
+  --shadow-neu-cta-pressed:
+    inset 3px 3px 7px rgba(0, 0, 0, 0.45),
+    inset -2px -2px 5px rgba(255, 255, 255, 0.08);
+
+  /* 3D Isometric Stack Parameters & Spring Motion */
+  --iso-perspective: 1800px;
+  --iso-rotate-x: 52deg;
+  --iso-rotate-z: -34deg;
+  --layer-gap: 44px;
+  --layer-gap-compact: 8px;
+
+  --ease-spring: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration-fast: 180ms;
+  --duration-stage: 680ms;
+  --duration-reveal: 520ms;
+
+  --container-max: 1120px;
+  --editorial-max: 680px;
+}

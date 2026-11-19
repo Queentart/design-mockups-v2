@@ -1,0 +1,855 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Leverage Computer — The Team Agent Workspace</title>
+    <meta
+      name="description"
+      content="Most AI tools make one person a little faster. A persistent team agent workspace where people and agents collaborate on one shared computer."
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Leverage Computer — The Team Agent Workspace"
+    />
+    <meta
+      property="og:description"
+      content="App layer, Multiplayer, Knowledge, Inference, Compute, and Governance stacked over all your team integrations."
+    />
+    <meta property="og:image" content="./assets/og-preview.svg" />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/variables.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="./js/data.js" defer></script>
+    <script src="./js/sound.js" defer></script>
+    <script src="./js/workspace-preview.js" defer></script>
+    <script src="./js/stage-3d.js" defer></script>
+    <script src="./js/app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <div class="floating-utility">
+      <button
+        type="button"
+        id="sound-toggle-btn"
+        class="floating-utility__btn"
+        data-action="toggle-sound"
+        aria-pressed="false"
+        aria-label="Toggle tactile click sound feedback"
+      >
+        <span class="floating-utility__dot" aria-hidden="true"></span>
+        <span id="sound-toggle-label">SFX OFF</span>
+      </button>
+    </div>
+
+    <div class="page-shell">
+      <main id="main-content">
+        <!-- Section 1: Editorial Intro & Live Team Agent Workspace Window -->
+        <section class="container hero-section" id="hero-workspace" aria-label="Workspace overview">
+          <header class="hero-intro">
+            <div class="brand-mark">
+              <svg
+                class="brand-mark__icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                aria-hidden="true"
+              >
+                <rect x="2" y="2" width="20" height="20" rx="5" fill="currentColor" />
+                <path
+                  d="M9 7.5 V15.5 H15.5"
+                  stroke="#FAF9F5"
+                  stroke-width="2.2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <span class="brand-mark__name">LEVERAGE COMPUTER</span>
+            </div>
+
+            <p class="hero-intro__greeting">Hello,</p>
+            <h1 class="hero-intro__lead">
+              Most AI tools make one person a little faster. We built something
+              else: <strong>the team agent workspace.</strong>
+            </h1>
+          </header>
+
+          <div class="workspace-window" aria-label="Interactive workspace preview">
+            <aside class="workspace-window__sidebar" aria-label="Workspace navigation">
+              <div class="workspace-switcher">
+                <span class="workspace-switcher__brand">
+                  <span class="workspace-switcher__badge" aria-hidden="true">R</span>
+                  <span>Rysum</span>
+                </span>
+                <span class="workspace-switcher__state">live</span>
+              </div>
+
+              <div class="sidebar-group" role="group" aria-label="Primary views">
+                <button
+                  type="button"
+                  class="sidebar-btn"
+                  data-action="select-tab"
+                  data-tab-id="threads"
+                >
+                  <span class="sidebar-btn__left">Inbox</span>
+                  <span class="sidebar-btn__count">3</span>
+                </button>
+                <button
+                  type="button"
+                  class="sidebar-btn"
+                  data-action="select-tab"
+                  data-tab-id="threads"
+                >
+                  <span class="sidebar-btn__left">Threads</span>
+                </button>
+                <button
+                  type="button"
+                  class="sidebar-btn"
+                  data-action="select-tab"
+                  data-tab-id="sessions"
+                >
+                  <span class="sidebar-btn__left">Sessions</span>
+                  <span class="sidebar-btn__count">2</span>
+                </button>
+              </div>
+
+              <div class="sidebar-group" role="group" aria-label="Coworker agents">
+                <span class="sidebar-group__label">Coworkers</span>
+                <button
+                  type="button"
+                  class="sidebar-btn"
+                  data-action="select-channel"
+                  data-channel-id="engineering"
+                >
+                  <span class="sidebar-btn__left">
+                    <span class="status-dot status-dot--agent" aria-hidden="true"></span>
+                    <span>Leverage</span>
+                  </span>
+                  <span class="sidebar-btn__hash">agent</span>
+                </button>
+              </div>
+
+              <div class="sidebar-group" role="group" aria-label="Channels">
+                <span class="sidebar-group__label">Channels</span>
+                <button
+                  type="button"
+                  class="sidebar-btn"
+                  data-action="select-channel"
+                  data-channel-id="design"
+                >
+                  <span class="sidebar-btn__left">
+                    <span class="sidebar-btn__hash" aria-hidden="true">#</span>
+                    <span>design</span>
+                  </span>
+                </button>
+                <button
+                  type="button"
+                  class="sidebar-btn is-active"
+                  data-action="select-channel"
+                  data-channel-id="engineering"
+                >
+                  <span class="sidebar-btn__left">
+                    <span class="sidebar-btn__hash" aria-hidden="true">#</span>
+                    <span>engineering</span>
+                  </span>
+                </button>
+                <button
+                  type="button"
+                  class="sidebar-btn"
+                  data-action="select-channel"
+                  data-channel-id="general"
+                >
+                  <span class="sidebar-btn__left">
+                    <span class="sidebar-btn__hash" aria-hidden="true">#</span>
+                    <span>general</span>
+                  </span>
+                </button>
+                <button
+                  type="button"
+                  class="sidebar-btn"
+                  data-action="select-channel"
+                  data-channel-id="growth"
+                >
+                  <span class="sidebar-btn__left">
+                    <span class="sidebar-btn__hash" aria-hidden="true">#</span>
+                    <span>growth</span>
+                  </span>
+                </button>
+                <button
+                  type="button"
+                  class="sidebar-btn"
+                  data-action="select-channel"
+                  data-channel-id="launch"
+                >
+                  <span class="sidebar-btn__left">
+                    <span class="sidebar-btn__hash" aria-hidden="true">#</span>
+                    <span>launch</span>
+                  </span>
+                </button>
+                <button
+                  type="button"
+                  class="sidebar-btn"
+                  data-action="select-channel"
+                  data-channel-id="support"
+                >
+                  <span class="sidebar-btn__left">
+                    <span class="sidebar-btn__hash" aria-hidden="true">#</span>
+                    <span>support</span>
+                  </span>
+                </button>
+              </div>
+
+              <div class="sidebar-group" role="group" aria-label="Direct messages">
+                <span class="sidebar-group__label">Direct Messages</span>
+                <button
+                  type="button"
+                  class="sidebar-btn"
+                  data-action="select-channel"
+                  data-channel-id="engineering"
+                >
+                  <span class="sidebar-btn__left">
+                    <span class="status-dot" aria-hidden="true"></span>
+                    <span>Alex Rivera</span>
+                  </span>
+                </button>
+                <button
+                  type="button"
+                  class="sidebar-btn"
+                  data-action="select-channel"
+                  data-channel-id="design"
+                >
+                  <span class="sidebar-btn__left">
+                    <span class="status-dot" aria-hidden="true"></span>
+                    <span>Lana Hoffman</span>
+                  </span>
+                </button>
+                <button
+                  type="button"
+                  class="sidebar-btn"
+                  data-action="select-channel"
+                  data-channel-id="support"
+                >
+                  <span class="sidebar-btn__left">
+                    <span class="status-dot status-dot--idle" aria-hidden="true"></span>
+                    <span>Sam Okafor</span>
+                  </span>
+                </button>
+              </div>
+
+              <button
+                type="button"
+                class="sidebar-footer-action"
+                data-action="jump-section"
+                data-target="architecture-stage"
+              >
+                + Inspect architecture stack
+              </button>
+            </aside>
+
+            <div class="workspace-window__feed">
+              <div class="feed-header">
+                <div class="feed-header__title">
+                  <span class="sidebar-btn__hash" aria-hidden="true">#</span>
+                  <span id="workspace-channel-title">engineering</span>
+                </div>
+                <span class="feed-header__meta" id="workspace-channel-meta">
+                  5 teammates · 1 active agent
+                </span>
+              </div>
+
+              <div class="workspace-window__tabs" role="tablist" aria-label="Channel tabs">
+                <button
+                  type="button"
+                  class="feed-tab is-active"
+                  role="tab"
+                  aria-selected="true"
+                  data-action="select-tab"
+                  data-tab-id="messages"
+                >
+                  Messages
+                </button>
+                <button
+                  type="button"
+                  class="feed-tab"
+                  role="tab"
+                  aria-selected="false"
+                  data-action="select-tab"
+                  data-tab-id="sessions"
+                >
+                  Sessions (2)
+                </button>
+                <button
+                  type="button"
+                  class="feed-tab"
+                  role="tab"
+                  aria-selected="false"
+                  data-action="select-tab"
+                  data-tab-id="threads"
+                >
+                  Threads
+                </button>
+                <button
+                  type="button"
+                  class="feed-tab"
+                  role="tab"
+                  aria-selected="false"
+                  data-action="select-tab"
+                  data-tab-id="tasks"
+                >
+                  Tasks
+                </button>
+                <button
+                  type="button"
+                  class="feed-tab"
+                  role="tab"
+                  aria-selected="false"
+                  data-action="select-tab"
+                  data-tab-id="files"
+                >
+                  Files
+                </button>
+              </div>
+
+              <div class="feed-stream" id="workspace-feed-stream" aria-live="polite">
+                <article class="feed-msg">
+                  <span class="feed-msg__avatar" aria-hidden="true">MO</span>
+                  <div class="feed-msg__body">
+                    <div class="feed-msg__head">
+                      <span class="feed-msg__author">Marco Bellini</span>
+                      <span class="feed-msg__time">09:05 AM</span>
+                    </div>
+                    <p class="feed-msg__text">
+                      Morning! Pricing experiment v3 goes live at 10. Dashboards are in
+                      <span class="feed-msg__tag">#growth</span>.
+                    </p>
+                  </div>
+                </article>
+
+                <article class="feed-msg feed-msg--agent">
+                  <span class="feed-msg__avatar" aria-hidden="true">LV</span>
+                  <div class="feed-msg__body">
+                    <div class="feed-msg__head">
+                      <span class="feed-msg__author">Leverage</span>
+                      <span class="feed-msg__badge">AGENT</span>
+                      <span class="feed-msg__time">09:12 AM</span>
+                    </div>
+                    <p class="feed-msg__text">
+                      Overnight: I merged 3 dependency updates. One needs a review: the
+                      payments SDK moves to a new major version.
+                    </p>
+                  </div>
+                </article>
+
+                <article class="feed-msg">
+                  <span class="feed-msg__avatar" aria-hidden="true">LH</span>
+                  <div class="feed-msg__body">
+                    <div class="feed-msg__head">
+                      <span class="feed-msg__author">Lana Hoffman</span>
+                      <span class="feed-msg__time">09:16 AM</span>
+                    </div>
+                    <p class="feed-msg__text">
+                      New empty states are in <span class="feed-msg__tag">#design</span>.
+                    </p>
+                  </div>
+                </article>
+
+                <article class="feed-msg">
+                  <span class="feed-msg__avatar" aria-hidden="true">MC</span>
+                  <div class="feed-msg__body">
+                    <div class="feed-msg__head">
+                      <span class="feed-msg__author">Mila Chen</span>
+                      <span class="feed-msg__time">09:21 AM</span>
+                    </div>
+                    <p class="feed-msg__text">
+                      Staging push is out. Error rate is flat and p95 latency dropped 18%.
+                    </p>
+                  </div>
+                </article>
+
+                <article class="feed-msg">
+                  <span class="feed-msg__avatar" aria-hidden="true">AR</span>
+                  <div class="feed-msg__body">
+                    <div class="feed-msg__head">
+                      <span class="feed-msg__author">Alex Rivera</span>
+                      <span class="feed-msg__time">09:24 AM</span>
+                    </div>
+                    <p class="feed-msg__text">
+                      Is <code class="feed-msg__code">test_billing_sync</code> red? It failed three times this morning.
+                    </p>
+                  </div>
+                </article>
+
+                <article class="feed-msg feed-msg--agent">
+                  <span class="feed-msg__avatar" aria-hidden="true">LV</span>
+                  <div class="feed-msg__body">
+                    <div class="feed-msg__head">
+                      <span class="feed-msg__author">Leverage</span>
+                      <span class="feed-msg__badge">AGENT</span>
+                      <span class="feed-msg__time">09:25 AM</span>
+                    </div>
+                    <p class="feed-msg__text">
+                      On it. The test waited on a fixed timeout, so it now waits for the
+                      order event. <code class="feed-msg__code">PR #420</code> is merged and the last 20 runs passed.
+                    </p>
+                  </div>
+                </article>
+
+                <article class="feed-msg">
+                  <span class="feed-msg__avatar" aria-hidden="true">SO</span>
+                  <div class="feed-msg__body">
+                    <div class="feed-msg__head">
+                      <span class="feed-msg__author">Sam Okafor</span>
+                      <span class="feed-msg__time">09:44 AM</span>
+                    </div>
+                    <p class="feed-msg__text">
+                      Customers on the Pro plan got <strong class="feed-msg__tag">two receipts</strong> for the same payment last night. Looks like the webhook retries twice after a timeout.
+                    </p>
+                  </div>
+                </article>
+              </div>
+
+              <div class="workspace-window__composer">
+                <div class="composer-row">
+                  <input
+                    type="text"
+                    id="composer-input"
+                    class="composer-input"
+                    placeholder="Message #engineering... (try typing or pick a prompt below)"
+                    aria-label="Send a sample message to the workspace"
+                  />
+                  <button
+                    type="button"
+                    class="composer-send-btn"
+                    data-action="send-message"
+                  >
+                    Send
+                  </button>
+                </div>
+                <div class="composer-prompts">
+                  <button
+                    type="button"
+                    class="composer-chip"
+                    data-action="fill-prompt"
+                    data-prompt-text="@Leverage check staging webhook retries and open a PR with tests."
+                  >
+                    @Leverage check webhook retries
+                  </button>
+                  <button
+                    type="button"
+                    class="composer-chip"
+                    data-action="fill-prompt"
+                    data-prompt-text="@Leverage summarize PR #420 latency diff for #launch."
+                  >
+                    @Leverage summarize PR #420
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 2: Scroll-Linked 3D Isometric 6-Layer Architecture & Integrations Floor -->
+        <section
+          class="container architecture-section"
+          id="architecture-stage"
+          aria-label="6-layer architecture stack and integrations"
+        >
+          <div class="stage-toolbar">
+            <div class="stage-toolbar__group" role="group" aria-label="Stack projection controls">
+              <button
+                type="button"
+                class="stage-ctrl-btn is-active"
+                data-action="set-stage-view"
+                data-stage-mode="exploded"
+                aria-pressed="true"
+              >
+                3D Exploded Stack
+              </button>
+              <button
+                type="button"
+                class="stage-ctrl-btn"
+                data-action="set-stage-view"
+                data-stage-mode="collapsed"
+                aria-pressed="false"
+              >
+                Collapse Stack
+              </button>
+              <button
+                type="button"
+                class="stage-ctrl-btn"
+                data-action="set-stage-view"
+                data-stage-mode="flat"
+                aria-pressed="false"
+              >
+                2D Front View
+              </button>
+            </div>
+            <span class="stage-toolbar__hint">
+              Click any layer or floor tile to inspect details
+            </span>
+          </div>
+
+          <div
+            id="iso-stage"
+            class="iso-stage is-isometric is-exploded"
+          >
+            <div class="iso-stage__board">
+              <div class="iso-stage__layers">
+                <button
+                  type="button"
+                  class="stack-layer stack-layer--1 stack-layer--app"
+                  data-action="inspect-layer"
+                  data-layer-id="app"
+                >
+                  <span class="mini-app-chrome" aria-hidden="true">
+                    <span class="mini-app-chrome__nav">
+                      <span class="mini-app-chrome__pill"></span>
+                      <span class="mini-app-chrome__pill mini-app-chrome__pill--short"></span>
+                      <span class="mini-app-chrome__pill"></span>
+                      <span class="mini-app-chrome__pill mini-app-chrome__pill--short"></span>
+                    </span>
+                    <span class="mini-app-chrome__feed">
+                      <span class="mini-app-chrome__row">
+                        <span class="mini-app-chrome__dot"></span>
+                        <span class="mini-app-chrome__line"></span>
+                      </span>
+                      <span class="mini-app-chrome__row">
+                        <span class="mini-app-chrome__dot mini-app-chrome__dot--coral"></span>
+                        <span class="mini-app-chrome__line mini-app-chrome__line--half"></span>
+                      </span>
+                      <span class="mini-app-chrome__row">
+                        <span class="mini-app-chrome__dot"></span>
+                        <span class="mini-app-chrome__line"></span>
+                      </span>
+                    </span>
+                  </span>
+                  <span class="stack-layer__bar">
+                    <span class="stack-layer__name">App Layer</span>
+                    <span class="stack-layer__chips">
+                      <span class="stack-layer__chip">shared workspace</span>
+                      <span class="stack-layer__chip">live sessions</span>
+                    </span>
+                  </span>
+                </button>
+
+                <button
+                  type="button"
+                  class="stack-layer stack-layer--2"
+                  data-action="inspect-layer"
+                  data-layer-id="multiplayer"
+                >
+                  <span class="stack-layer__bar">
+                    <span class="stack-layer__name">Multiplayer</span>
+                    <span class="stack-layer__chips">
+                      <span class="stack-layer__chip">people and agents</span>
+                      <span class="stack-layer__chip">join any task</span>
+                      <span class="stack-layer__chip">chat and calls</span>
+                    </span>
+                  </span>
+                </button>
+
+                <button
+                  type="button"
+                  class="stack-layer stack-layer--3"
+                  data-action="inspect-layer"
+                  data-layer-id="knowledge"
+                >
+                  <span class="stack-layer__bar">
+                    <span class="stack-layer__name">Knowledge</span>
+                    <span class="stack-layer__chips">
+                      <span class="stack-layer__chip">company docs</span>
+                      <span class="stack-layer__chip">lessons learned</span>
+                      <span class="stack-layer__chip">playbooks</span>
+                    </span>
+                  </span>
+                </button>
+
+                <button
+                  type="button"
+                  class="stack-layer stack-layer--4"
+                  data-action="inspect-layer"
+                  data-layer-id="inference"
+                >
+                  <span class="stack-layer__bar">
+                    <span class="stack-layer__name">Inference</span>
+                    <span class="stack-layer__chips">
+                      <span class="stack-layer__chip">any AI model</span>
+                      <span class="stack-layer__chip">any agent</span>
+                      <span class="stack-layer__chip">your subscription or ours</span>
+                    </span>
+                  </span>
+                </button>
+
+                <button
+                  type="button"
+                  class="stack-layer stack-layer--5"
+                  data-action="inspect-layer"
+                  data-layer-id="compute"
+                >
+                  <span class="stack-layer__bar">
+                    <span class="stack-layer__name">Compute</span>
+                    <span class="stack-layer__chips">
+                      <span class="stack-layer__chip">a computer for every session</span>
+                      <span class="stack-layer__chip">works while you sleep</span>
+                    </span>
+                  </span>
+                </button>
+
+                <button
+                  type="button"
+                  class="stack-layer stack-layer--6 stack-layer--governance is-active"
+                  data-action="inspect-layer"
+                  data-layer-id="governance"
+                >
+                  <span class="stack-layer__bar">
+                    <span class="stack-layer__name">Governance</span>
+                    <span class="stack-layer__chips">
+                      <span class="stack-layer__chip">access control</span>
+                      <span class="stack-layer__chip">approvals</span>
+                      <span class="stack-layer__chip">audit trail</span>
+                      <span class="stack-layer__chip">cost tracking</span>
+                    </span>
+                  </span>
+                </button>
+              </div>
+
+              <div class="integrations-floor" aria-label="Connected tools floor">
+                <div class="integrations-floor__head">
+                  <span class="integrations-floor__label">Integrations</span>
+                  <span class="integrations-floor__status" id="integration-floor-status">
+                    18 connected tools · gateway approved
+                  </span>
+                </div>
+                <div class="integrations-floor__grid">
+                  <button type="button" class="integrations-floor__tile" data-action="inspect-integration" data-tool-id="linear" aria-pressed="false">
+                    <span class="integrations-floor__tile-name">Linear</span>
+                    <span class="integrations-floor__meta">issues</span>
+                  </button>
+                  <button type="button" class="integrations-floor__tile" data-action="inspect-integration" data-tool-id="github" aria-pressed="false">
+                    <span class="integrations-floor__tile-name">GitHub</span>
+                    <span class="integrations-floor__meta">repos &amp; PRs</span>
+                  </button>
+                  <button type="button" class="integrations-floor__tile" data-action="inspect-integration" data-tool-id="postgres" aria-pressed="false">
+                    <span class="integrations-floor__tile-name">Postgres</span>
+                    <span class="integrations-floor__meta">read query</span>
+                  </button>
+                  <button type="button" class="integrations-floor__tile" data-action="inspect-integration" data-tool-id="sentry" aria-pressed="false">
+                    <span class="integrations-floor__tile-name">Sentry</span>
+                    <span class="integrations-floor__meta">traces</span>
+                  </button>
+                  <button type="button" class="integrations-floor__tile" data-action="inspect-integration" data-tool-id="gdrive" aria-pressed="false">
+                    <span class="integrations-floor__tile-name">Google Drive</span>
+                    <span class="integrations-floor__meta">docs</span>
+                  </button>
+                  <button type="button" class="integrations-floor__tile" data-action="inspect-integration" data-tool-id="salesforce" aria-pressed="false">
+                    <span class="integrations-floor__tile-name">Salesforce</span>
+                    <span class="integrations-floor__meta">CRM</span>
+                  </button>
+                  <button type="button" class="integrations-floor__tile" data-action="inspect-integration" data-tool-id="jira" aria-pressed="false">
+                    <span class="integrations-floor__tile-name">Jira</span>
+                    <span class="integrations-floor__meta">sprints</span>
+                  </button>
+                  <button type="button" class="integrations-floor__tile" data-action="inspect-integration" data-tool-id="airtable" aria-pressed="false">
+                    <span class="integrations-floor__tile-name">Airtable</span>
+                    <span class="integrations-floor__meta">bases</span>
+                  </button>
+                  <button type="button" class="integrations-floor__tile" data-action="inspect-integration" data-tool-id="hubspot" aria-pressed="false">
+                    <span class="integrations-floor__tile-name">HubSpot</span>
+                    <span class="integrations-floor__meta">pipeline</span>
+                  </button>
+                  <button type="button" class="integrations-floor__tile" data-action="inspect-integration" data-tool-id="bigquery" aria-pressed="false">
+                    <span class="integrations-floor__tile-name">BigQuery</span>
+                    <span class="integrations-floor__meta">warehouse</span>
+                  </button>
+                  <button type="button" class="integrations-floor__tile" data-action="inspect-integration" data-tool-id="figma" aria-pressed="false">
+                    <span class="integrations-floor__tile-name">Figma</span>
+                    <span class="integrations-floor__meta">design files</span>
+                  </button>
+                  <button type="button" class="integrations-floor__tile" data-action="inspect-integration" data-tool-id="datadog" aria-pressed="false">
+                    <span class="integrations-floor__tile-name">Datadog</span>
+                    <span class="integrations-floor__meta">metrics</span>
+                  </button>
+                  <button type="button" class="integrations-floor__tile" data-action="inspect-integration" data-tool-id="notion" aria-pressed="false">
+                    <span class="integrations-floor__tile-name">Notion</span>
+                    <span class="integrations-floor__meta">wiki</span>
+                  </button>
+                  <button type="button" class="integrations-floor__tile" data-action="inspect-integration" data-tool-id="stripe" aria-pressed="false">
+                    <span class="integrations-floor__tile-name">Stripe</span>
+                    <span class="integrations-floor__meta">billing</span>
+                  </button>
+                  <button type="button" class="integrations-floor__tile" data-action="inspect-integration" data-tool-id="mcp" aria-pressed="false">
+                    <span class="integrations-floor__tile-name">MCP servers</span>
+                    <span class="integrations-floor__meta">protocol</span>
+                  </button>
+                  <button type="button" class="integrations-floor__tile" data-action="inspect-integration" data-tool-id="snowflake" aria-pressed="false">
+                    <span class="integrations-floor__tile-name">Snowflake</span>
+                    <span class="integrations-floor__meta">data</span>
+                  </button>
+                  <button type="button" class="integrations-floor__tile" data-action="inspect-integration" data-tool-id="slack" aria-pressed="false">
+                    <span class="integrations-floor__tile-name">Slack</span>
+                    <span class="integrations-floor__meta">bridge</span>
+                  </button>
+                  <button type="button" class="integrations-floor__tile" data-action="inspect-integration" data-tool-id="apis" aria-pressed="false">
+                    <span class="integrations-floor__tile-name">Your APIs</span>
+                    <span class="integrations-floor__meta">REST &amp; GraphQL</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <p class="iso-stage__caption" id="stack-live-caption">
+              <strong>↑ The app is the top layer.</strong> Under it: what your team shares,
+              and every tool it connects.
+            </p>
+          </div>
+        </section>
+
+        <!-- Section 3: Editorial Prose Reveal, Primary CTA, Postscripts & Command Footer -->
+        <section class="container editorial-outro" id="editorial-outro" aria-label="Product thesis and access">
+          <div class="editorial-outro__prose">
+            <p class="editorial-outro__para">
+              It is one persistent computer: your files, memory and history stay, across
+              every session and every teammate. Inside it, every agent gets its own
+              machine. Claude Code, Codex and Grok Build run side by side, on your plans or
+              ours.
+            </p>
+            <p class="editorial-outro__para">
+              Every call to the outside world goes through a gateway one person approves.
+              Every file, skill and decision lives in Git.
+            </p>
+            <p class="editorial-outro__para">
+              Your team works in the open: anyone can watch a session, steer it, or pick it
+              up. And the computer keeps working while you sleep.
+            </p>
+          </div>
+
+          <p class="editorial-outro__sign">— Leverage Computer</p>
+
+          <div class="editorial-outro__cta-wrap">
+            <button
+              type="button"
+              class="cta-pill-btn"
+              data-action="request-workspace"
+            >
+              <span>Open yours</span>
+              <span class="cta-pill-btn__arrow" aria-hidden="true">↗</span>
+            </button>
+            <p class="cta-feedback" id="cta-feedback" hidden>
+              Workspace reservation queued. Press <code>/</code> anytime to inspect layers or channels.
+            </p>
+          </div>
+
+          <div class="editorial-outro__notes">
+            <p class="editorial-outro__ps" id="pricing">
+              <strong>P.S.</strong> It costs $0.50 per agent hour, and nothing while it sleeps. No seats. Pricing stays transparent.
+            </p>
+            <p class="editorial-outro__ps" id="thesis">
+              <strong>P.P.S.</strong> People from OpenAI, Shopify, Ramp, Uber, Google, Databricks, SAP and Anthropic test workflows like this. Built in London.
+            </p>
+          </div>
+        </section>
+      </main>
+
+      <footer class="container site-footer">
+        <nav class="site-footer__links" aria-label="Footer navigation">
+          <a class="site-footer__link" href="#hero-workspace">sign in</a>
+          <a class="site-footer__link" href="#pricing">pricing</a>
+          <a class="site-footer__link" href="#thesis">thesis</a>
+          <a class="site-footer__link" href="#architecture-stage">mac app</a>
+          <a class="site-footer__link" href="#architecture-stage">changelog</a>
+          <a class="site-footer__link" href="#editorial-outro">careers</a>
+        </nav>
+
+        <button
+          type="button"
+          class="cmd-trigger-btn"
+          data-action="open-commands"
+          aria-haspopup="dialog"
+          aria-controls="command-palette"
+        >
+          <span>type</span>
+          <kbd class="cmd-trigger-btn__key">/</kbd>
+          <span>for commands</span>
+        </button>
+      </footer>
+    </div>
+
+    <!-- Command Palette Modal (Opened via '/' key or footer hint button) -->
+    <div
+      id="command-palette"
+      class="command-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Quick command palette"
+      hidden
+    >
+      <div class="command-modal__panel">
+        <div class="command-modal__search-row">
+          <input
+            type="text"
+            id="command-search"
+            class="command-modal__input"
+            placeholder="Filter commands... (app, stack, governance, sound)"
+            aria-label="Filter quick commands"
+          />
+          <button
+            type="button"
+            class="command-modal__esc"
+            data-action="close-commands"
+          >
+            Esc
+          </button>
+        </div>
+
+        <div class="command-modal__list" id="command-list">
+          <button
+            type="button"
+            class="command-modal__item"
+            data-action="run-command"
+            data-command="jump-hero"
+          >
+            <span>Jump to Team Agent Workspace</span>
+            <span class="command-modal__shortcut">#hero-workspace</span>
+          </button>
+          <button
+            type="button"
+            class="command-modal__item"
+            data-action="run-command"
+            data-command="toggle-stack"
+          >
+            <span>Toggle 3D Stack Explode / Collapse</span>
+            <span class="command-modal__shortcut">3D Stack</span>
+          </button>
+          <button
+            type="button"
+            class="command-modal__item"
+            data-action="run-command"
+            data-command="inspect-governance"
+          >
+            <span>Inspect Governance Layer (Coral Accent)</span>
+            <span class="command-modal__shortcut">Layer 06</span>
+          </button>
+          <button
+            type="button"
+            class="command-modal__item"
+            data-action="run-command"
+            data-command="toggle-sound"
+          >
+            <span>Toggle Tactile Switch SFX</span>
+            <span class="command-modal__shortcut">Web Audio</span>
+          </button>
+          <button
+            type="button"
+            class="command-modal__item"
+            data-action="run-command"
+            data-command="jump-cta"
+          >
+            <span>Jump to Open Yours CTA</span>
+            <span class="command-modal__shortcut">#editorial-outro</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

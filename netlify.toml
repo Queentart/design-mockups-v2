@@ -1,0 +1,15 @@
+# Netlify Static Deploy Configuration (Track C2 Repository Root)
+[build]
+  publish = "output/clean-mockup-v2"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "SAMEORIGIN"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"

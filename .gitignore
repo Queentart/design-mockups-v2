@@ -1,0 +1,26 @@
+# Environment & Secret Files
+.env
+.env.*
+*.pem
+*.key
+
+# OS Metadata
+.DS_Store
+Thumbs.db
+Desktop.ini
+desktop.ini
+
+# Dependencies & Build / Local Platform Caches
+node_modules/
+.netlify/
+.vercel/
+*.log
+
+# Heavy Binary Reference Media (Excluded from Git & Static Hosting)
+references/*.mp4
+references/*.mov
+references/*.avi
+references/*.pdf
+
+# Always track directory placeholders
+!.gitkeep
